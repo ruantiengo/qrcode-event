@@ -76,6 +76,7 @@ func qrCodeHandler(w http.ResponseWriter, r *http.Request) {
 	notifyClients("QRCode pago")
 
 	w.WriteHeader(http.StatusOK)
+	http.Redirect(w, r, "https://seidor4tax.com.br/", http.StatusFound)
 	fmt.Fprintf(w, "QR Code payment notification sent to WebSocket clients")
 }
 
